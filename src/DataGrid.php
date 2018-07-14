@@ -430,7 +430,7 @@ class DataGrid extends Nette\Application\UI\Control
 	 * {inheritDoc}
 	 * @return void
 	 */
-	public function attached($presenter)
+	public function attached(Nette\ComponentModel\IComponent $presenter): void
 	{
 		parent::attached($presenter);
 
@@ -3503,7 +3503,7 @@ class DataGrid extends Nette\Application\UI\Control
 	/**
 	 * @return PresenterComponent
 	 */
-	public function getParent()
+	public function getParent(): ?Nette\ComponentModel\IContainer
 	{
 		$parent = parent::getParent();
 
