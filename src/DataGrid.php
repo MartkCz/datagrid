@@ -2868,7 +2868,35 @@ class DataGrid extends Nette\Application\UI\Control
 	public function getTranslator()
 	{
 		if (!$this->translator) {
-			$this->translator = new Localization\SimpleTranslator;
+			$this->translator = new Localization\SimpleTranslator([
+				'ublaboo_datagrid.no_item_found_reset' => 'Žádné položky nenalezeny.',
+				'ublaboo_datagrid.no_item_found' => 'Žádné položky nenalezeny.',
+				'ublaboo_datagrid.here' => 'tady',
+				'ublaboo_datagrid.items' => 'Položky',
+				'ublaboo_datagrid.all' => 'vše',
+				'ublaboo_datagrid.from' => 'z',
+				'ublaboo_datagrid.reset_filter' => 'Resetovat filtr',
+				'ublaboo_datagrid.group_actions' => 'Skupinové akce',
+				'ublaboo_datagrid.show' => 'Zobrazit',
+				'ublaboo_datagrid.add' => 'Přidat',
+				'ublaboo_datagrid.edit' => 'Upravit',
+				'ublaboo_datagrid.show_all_columns' => 'Zobrazit všechny sloupce',
+				'ublaboo_datagrid.show_default_columns' => 'Zobrazit výchozí sloupce',
+				'ublaboo_datagrid.hide_column' => 'Skrýt sloupec',
+				'ublaboo_datagrid.action' => 'Akce',
+				'ublaboo_datagrid.previous' => 'Předchozí',
+				'ublaboo_datagrid.next' => 'Další',
+				'ublaboo_datagrid.choose' => 'Vyberte',
+				'ublaboo_datagrid.choose_input_required' => 'Group action text not allow empty value',
+				'ublaboo_datagrid.execute' => 'Provést',
+				'ublaboo_datagrid.save' => 'Uložit',
+				'ublaboo_datagrid.cancel' => 'Zrušit',
+				'ublaboo_datagrid.multiselect_choose' => 'Vybrat',
+				'ublaboo_datagrid.multiselect_selected' => '{0} vybráno',
+				'ublaboo_datagrid.filter_submit_button' => 'Filtrovat',
+				'ublaboo_datagrid.show_filter' => 'Zobrazit filtr',
+				'ublaboo_datagrid.per_page_submit' => 'Změnit',
+			]);
 		}
 
 		return $this->translator;
