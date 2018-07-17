@@ -56,8 +56,6 @@ class DataGridPaginator extends Nette\Application\UI\Control
 		IContainer $parent = null,
 		$name = null
 	) {
-		parent::__construct($parent, $name);
-
 		$this->translator = $translator;
 		$this->icon_prefix = $icon_prefix;
 	}

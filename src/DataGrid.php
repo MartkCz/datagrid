@@ -388,8 +388,6 @@ class DataGrid extends Nette\Application\UI\Control
 	 */
 	public function __construct(Nette\ComponentModel\IContainer $parent = null, $name = null)
 	{
-		parent::__construct();
-
 		if ($parent !== null) {
 			$parent->addComponent($this, $name);
 		}
@@ -483,7 +481,7 @@ class DataGrid extends Nette\Application\UI\Control
 		if (!empty($this->redraw_item)) {
 			$items = $this->dataModel->filterRow($this->redraw_item);
 		} else {
-			$items = Nette\Utils\Callback::invokeArgs(
+			$items = call_user_func_array(
 				[$this->dataModel, 'filterData'],
 				[
 					$this->getPaginator(),
@@ -3525,23 +3523,6 @@ class DataGrid extends Nette\Application\UI\Control
 		}
 
 		return $return;
-	}
-
-
-	/**
-	 * @return PresenterComponent
-	 */
-	public function getParent(): ?Nette\ComponentModel\IContainer
-	{
-		$parent = parent::getParent();
-
-		if (!($parent instanceof PresenterComponent)) {
-			throw new DataGridHasToBeAttachedToPresenterComponentException(
-				"DataGrid is attached to: '" . get_class($parent) . "', but instance of PresenterComponent is needed."
-			);
-		}
-
-		return $parent;
 	}
 
 
